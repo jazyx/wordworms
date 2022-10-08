@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wordworms/static/css/main.f028c62f.css",
+    "main.js": "/wordworms/static/js/main.03421a4b.js",
+    "index.html": "/wordworms/index.html",
+    "main.f028c62f.css.map": "/wordworms/static/css/main.f028c62f.css.map",
+    "main.03421a4b.js.map": "/wordworms/static/js/main.03421a4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f028c62f.css",
+    "static/js/main.03421a4b.js"
+  ]
+}
