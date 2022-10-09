@@ -135,7 +135,7 @@ const getCueWords = (excluded=[], count=1) => {
   }
   removeFrom(unusedWords, remover, true)
 
-  let max = unusedWords.length
+  let max = unusedWords.length / 4
   while (count--) {
     const randomIndex = Math.floor(Math.random() * max--)
     const wordData = unusedWords.splice(randomIndex, 1)[0]
