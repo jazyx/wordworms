@@ -35,23 +35,23 @@ export const GameProvider = ({ children }) => {
   const [ unique, setUnique ] = useState(false)
 
   
-  const createCueWord = (isInit) => {
+  const createCueWords = (isInit) => {
     const excluded = players
       .map(playerData => (
         playerData.words
       ))
       .flat()
 
-    const count = 1
-    const cueWord = getCueWords(excluded, count)[0]
+    const count = 5
+    const cueWords = getCueWords(excluded, count)
 
     if (isInit) {
-      return cueWord
+      return cueWords
     }
-    setCueWord(cueWord)
+    setCueWords(cueWords)
   }
 
-  const [ cueWord, setCueWord ] = useState(createCueWord(true))
+  const [ cueWords, setCueWords ] = useState(createCueWords(true))
 
 
   const adjustLevel = (level) => {
@@ -124,7 +124,7 @@ export const GameProvider = ({ children }) => {
 
 
   const newGame = () => {
-    createCueWord()
+    createCueWords()
     refreshPlayerWords()
   }
 
@@ -149,7 +149,7 @@ export const GameProvider = ({ children }) => {
         unique,
         setUnique,
         generateWords,
-        cueWord,
+        cueWords,
         newGame,
         playState,
         togglePlay

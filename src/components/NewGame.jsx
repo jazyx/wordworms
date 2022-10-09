@@ -5,18 +5,32 @@ import { GameContext } from "../contexts/Game"
 
 function NewGame() {
   const {
-    cueWord,
+    cueWords,
     newGame
   } = useContext(GameContext)
+
+
+  const getCueWordsList = () => {
+    const cueWordItems = cueWords.map( word => (
+      <li
+        key={word}
+      >
+        {word}
+      </li>
+    ))
+
+    return <ul className="cue">{cueWordItems}</ul>
+  }
+
+
+  const cueWordList = getCueWordsList()
+
+
   
   return (
     <>
-      <p>
-        <span>Starting word: </span>
-        <span className="cue">
-          {cueWord}
-        </span>
-      </p>
+      <p>Starting words:</p>
+      {cueWordList}
       <button
         className="generate"
         onClick={newGame}

@@ -7,6 +7,7 @@
   --settings-size: calc(var(--main-width) - var(--disclosure-size));
   --font: serif;
   --tab-radius: 0.125em;
+  --hilite: #ff9;
 }
 
 body {
@@ -136,7 +137,7 @@ ul {
 }
 
 .players li.selected {
-  background-color: #ff9;
+  background-color: var(--hilite);
   color: #000;
 }
 
@@ -270,9 +271,24 @@ fieldset {
   padding: 0.5em;
 }
 
-ul.words, .cue {
+ul.words, .cue{
   text-transform: uppercase;
   margin: 0.5em 0;
+}
+
+.cue {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cue li {
+  display: inline-block;
+  width: 3em;
+  /* background-color: #666; */
+}
+
+.cue li:nth-child(3) {
+  color: var(--hilite);
 }
 
 ul.words .score,
@@ -327,4 +343,8 @@ h3 span {
   display: inline-block;
   width: 33%;
   text-align: center;
+}
+
+p {
+  margin: 0
 }
