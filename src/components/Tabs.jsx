@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { GameContext } from "../contexts/Game"
 import Play from './Play';
 import Cheat from './Cheat';
+import QRCode from './QRCode';
 
 
 
@@ -13,14 +14,27 @@ function Tabs(){
   } = useContext(GameContext)
 
 
-  const Component = playState === "play"
-                  ? Play
-                  : Cheat
+  let Component
+  switch (playState) {
+    case "cheat":
+      Component = Cheat
+      break;
+    case "qrcode":
+      Component = QRCode
+      break;
+    default:
+      Component = Play
+      break;
+  }
 
 
   const getTabItems = () => {
-    const tabItems = ["Play", "Cheat"].map( state => {
+    const tabItems = ["Play", "Cheat", "QR Code"].map( state => {
       const id = state.toLowerCase()
+                      .split("")
+                      .filter(char => char !== " ")
+                      .join("")
+
       const className = id === playState
                       ? "selected"
                       : ""
