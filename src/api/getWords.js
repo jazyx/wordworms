@@ -148,6 +148,7 @@ const getCueWords = (excluded=[], count=1) => {
 
 
 const getDeltas = word => {
+  word = word.toLowerCase()
   const deltas = allWords
     .filter( wordData => wordData[2].indexOf(word) > -1)
     .map( wordData => wordData[0])
