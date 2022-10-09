@@ -348,3 +348,7 @@ h3 span {
 p {
   margin: 0
 }
+
+.search {
+  text-transform: uppercase;
+}

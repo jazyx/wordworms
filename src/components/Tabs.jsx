@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { GameContext } from "../contexts/Game"
 import Play from './Play';
-import Cheat from './Cheat';
+import Help from './Help';
 import QRCode from './QRCode';
 
 
@@ -16,8 +16,8 @@ function Tabs(){
 
   let Component
   switch (playState) {
-    case "cheat":
-      Component = Cheat
+    case "help":
+      Component = Help
       break;
     case "qrcode":
       Component = QRCode
@@ -29,7 +29,7 @@ function Tabs(){
 
 
   const getTabItems = () => {
-    const tabItems = ["Play", "Cheat", "QR Code"].map( state => {
+    const tabItems = ["Play", "Help", "QR Code"].map( state => {
       const id = state.toLowerCase()
                       .split("")
                       .filter(char => char !== " ")

@@ -6,9 +6,9 @@ import {
   getDeltas
 } from '../api/getWords'
 
-function Cheat() {
-  const { cueWord } = useContext(GameContext)
-  const [ cue, setCue ] = useState(cueWord);
+function Help() {
+  const { cueWords } = useContext(GameContext)
+  const [ cue, setCue ] = useState(cueWords[2]);
   const tempDeltas = getDeltas(cue)
 
   const [ searchWord, setSearchWord ] = useState("")
@@ -124,10 +124,10 @@ function Cheat() {
           Find words
         </button>
       </label>
-      <h3>Words like <span className="cue">{cue}</span></h3>
+      <h3>Words like <span className="search">{cue}</span></h3>
       {deltaList}
     </>
   );
 }
 
-export default Cheat;
+export default Help;
