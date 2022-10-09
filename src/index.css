@@ -6,6 +6,7 @@
   --disclosure-size: 1em;
   --settings-size: calc(var(--main-width) - var(--disclosure-size));
   --font: serif;
+  --tab-radius: 0.125em;
 }
 
 body {
@@ -26,11 +27,34 @@ body {
 }
 
 h1 {
-  margin: 0;
+  /* margin: 0; */
 }
 
 label { /* toggleAdd | settings | no shared letters */
   display: block;
+}
+
+/* TABS // TABS // TABS // TABS // TABS // TABS  */
+
+ul.tabs {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tabs li {
+  border: 1px solid #999;
+  border-top-right-radius: var(--tab-radius);
+  border-top-left-radius: var(--tab-radius);
+  background-color: #333;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs li.selected {
+  border-color: #fff;
+  border-bottom: none;
+  background-color: transparent;
 }
 
 /* PLAYERS // PLAYERS // PLAYERS // PLAYERS */
@@ -252,7 +276,7 @@ ul.words, .cue {
 }
 
 ul.words .score,
-ul.words .arms {
+ul.words .deltas {
   display: inline-block;
   width: 2em;
   /* background-color: #333; */
@@ -273,4 +297,30 @@ button.generate {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+}
+
+
+label[for=findDeltas] * {
+  font-size: 1em;
+}
+
+
+h3 {
+  color: #999;
+}
+
+h3 span {
+  color: #fff;
+}
+
+
+.deltas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.deltas li {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
 }

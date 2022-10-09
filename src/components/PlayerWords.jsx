@@ -13,14 +13,14 @@ function PlayerWords() {
     const words = (players[player] || {}).words || []
 
     const wordList = words.map( wordData => {
-      const [ word, score, arms] = wordData
+      const [ word, score, deltas] = wordData
       return (
         <li
           key={word}
         >
           <span className="score">{score}</span>
           <span className="word">{word}</span>
-          <span className="arms">{arms}</span>
+          <span className="deltas">{deltas.length}</span>
         </li>
       )
     })

@@ -6,9 +6,21 @@ export const GameContext = createContext()
 
 
 export const GameProvider = ({ children }) => {
+  const [ playState, setPlayState ] = useState("play")
+
   const [ player, setPlayer ] = useState(0)
   const [ players, setPlayers ] = useState([
-    { name: "James",
+    { name: "Easy",
+      level: 1,
+      unique: false,
+      words: getWords(1, true)
+    },
+    { name: "Hard",
+      level: 5,
+      unique: false,
+      words: getWords(5, false)
+    },
+    { name: "Grim",
       level: 9,
       unique: true,
       words: getWords(9, true)
@@ -24,9 +36,12 @@ export const GameProvider = ({ children }) => {
 
   
   const createCueWord = (isInit) => {
-    const excluded = players.map(playerData => (
-      playerData.words
-    )).flat()
+    const excluded = players
+      .map(playerData => (
+        playerData.words
+      ))
+      .flat()
+
     const count = 1
     const cueWord = getCueWords(excluded, count)[0]
 
@@ -112,6 +127,11 @@ export const GameProvider = ({ children }) => {
     createCueWord()
     refreshPlayerWords()
   }
+
+
+  const togglePlay = event => {
+    setPlayState(event.target.id)
+  }
   
 
   return (
@@ -130,7 +150,9 @@ export const GameProvider = ({ children }) => {
         setUnique,
         generateWords,
         cueWord,
-        newGame
+        newGame,
+        playState,
+        togglePlay
       }}
     >
       {children}
