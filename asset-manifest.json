@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wordworms/static/css/main.503ad56c.css",
-    "main.js": "/wordworms/static/js/main.b2dd1de6.js",
+    "main.css": "/wordworms/static/css/main.2655ee4b.css",
+    "main.js": "/wordworms/static/js/main.db8effc4.js",
     "index.html": "/wordworms/index.html",
-    "main.503ad56c.css.map": "/wordworms/static/css/main.503ad56c.css.map",
-    "main.b2dd1de6.js.map": "/wordworms/static/js/main.b2dd1de6.js.map"
+    "main.2655ee4b.css.map": "/wordworms/static/css/main.2655ee4b.css.map",
+    "main.db8effc4.js.map": "/wordworms/static/js/main.db8effc4.js.map"
   },
   "entrypoints": [
-    "static/css/main.503ad56c.css",
-    "static/js/main.b2dd1de6.js"
+    "static/css/main.2655ee4b.css",
+    "static/js/main.db8effc4.js"
   ]
 }
