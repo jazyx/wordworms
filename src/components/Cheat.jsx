@@ -18,7 +18,7 @@ function Cheat() {
   
 
   const lookUpWords = (sourceWord) => {
-    if (!sourceWord) {
+    if (typeof sourceWord !== "string") {
       sourceWord = searchWord
   
       if (!ready) {
@@ -119,6 +119,7 @@ function Cheat() {
         />
         <button
           disabled={!ready}
+          onClick={lookUpWords}
         >
           Find words
         </button>

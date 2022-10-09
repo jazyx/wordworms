@@ -304,6 +304,10 @@ label[for=findDeltas] * {
   font-size: 1em;
 }
 
+#findDeltas {
+  width: 10em;
+}
+
 
 h3 {
   color: #999;

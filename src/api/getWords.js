@@ -151,8 +151,10 @@ const getDeltas = word => {
   const deltas = allWords
     .filter( wordData => wordData[2].indexOf(word) > -1)
     .map( wordData => wordData[0])
+  let known = allWords.find( wordData => wordData[0] === word)
+  known = (known || [0,0,[]])[2]
 
-  return deltas
+  return Array.from(new Set([...deltas, ...known]))
 }
 
 
